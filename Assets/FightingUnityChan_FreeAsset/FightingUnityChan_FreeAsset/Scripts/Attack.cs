@@ -44,25 +44,52 @@ public class Attack : MonoBehaviour
         //		handCollider = GameObject.Find("Character1_LeftHand").GetComponent<SphereCollider>();
         //	}
         handCollider.enabled = stateInfo.IsName("Jab");
-        footCollider.enabled = stateInfo.IsName("Hikick") || stateInfo.IsName("Spinkick");
+        footCollider.enabled = stateInfo.IsName("Hikick") || stateInfo.IsName("Spinkick") || stateInfo.IsName("ScrewKick");
 
 
-        //Aを押すとjab
-        if (Input.GetKeyDown(KeyCode.A))
+        ////Aを押すとjab
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    animator.SetBool("Jab", true);
+        //}
+
+        ////Sを押すとHikick
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    animator.SetBool("Hikick", true);
+        //}
+
+        ////Dを押すとSpinkick
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    animator.SetBool("Spinkick", true);
+        //}
+        if (animator.GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash("Run.ScrewKick"))
         {
-            animator.SetBool("Jab", true);
+            animator.SetBool("ScrewKick", false);
         }
-
-        //Sを押すとHikick
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            animator.SetBool("Hikick", true);
-        }
-
-        //Dを押すとSpinkick
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            animator.SetBool("Spinkick", true);
-        }
+        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).fullPathHash);
     }
+
+    public void OnClick_Maru()
+    {
+        animator.SetBool("Jab", true);
+    }
+
+    public void OnClick_Sankaku()
+    {
+        animator.SetBool("Spinkick", true);
+    }
+
+    public void OnClick_Shikaku()
+    {
+        animator.SetBool("Hikick", true);
+    }
+
+    public void OnClick_Batu()
+    {
+        animator.SetBool("ScrewKick", true); 
+    }
+
+
 }
