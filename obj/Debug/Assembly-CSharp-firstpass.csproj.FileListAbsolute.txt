@@ -208,3 +208,5 @@ D:\data\working\Unity\DynastyWarriors\obj\Debug\Assembly-CSharp-firstpass.csproj
 D:\data\working\Unity\DynastyWarriors\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
 D:\data\working\Unity\DynastyWarriors\obj\Debug\Assembly-CSharp-firstpass.dll
 D:\data\working\Unity\DynastyWarriors\obj\Debug\Assembly-CSharp-firstpass.pdb
+D:\data\working\Unity\DynastyWarriors\Temp\bin\Debug\Boo.Lang.dll
+D:\data\working\Unity\DynastyWarriors\Temp\bin\Debug\UnityEditor.UI.dll

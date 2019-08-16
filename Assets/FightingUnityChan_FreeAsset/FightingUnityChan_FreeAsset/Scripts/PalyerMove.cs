@@ -14,7 +14,6 @@ public class PalyerMove : MonoBehaviour
     //外部から値が変わらないようにPrivateで定義
     private CharacterController characterController;
     private Animator animator;
-    //private Vector3 moveDirection = Vector3.zero;
 
 
     // Use this for initialization
@@ -33,7 +32,6 @@ public class PalyerMove : MonoBehaviour
         if (CheckGrounded() == true)
         {
             var moveDirection = CalcMovDirection();
-            Debug.Log(moveDirection);
             OperatorCharacter(moveDirection);
             
         }
@@ -44,6 +42,7 @@ public class PalyerMove : MonoBehaviour
          
         Vector3 moveDirectionXZ = moveDirection;
         moveDirectionXZ.y = 0.0f;
+
 
         if (moveDirectionXZ != Vector3.zero)
         {
@@ -68,10 +67,16 @@ public class PalyerMove : MonoBehaviour
         // }
 
 
-        //Vector3 globalDirection = transform.TransformDirection(moveDirection);
-        
-        characterController.Move(moveDirection * Time.deltaTime);
+        ////キャラクターコントローラ使う場合
+        //characterController.Move(moveDirection * Time.deltaTime);
 
+        //Transformを使う場合
+        moveDirection *= Time.deltaTime;
+        this.gameObject.transform.Translate(moveDirection,Space.World);
+        if (moveDirection.x != 0.0 && moveDirection.z != 0.0)
+        {
+            Debug.Log(moveDirection);
+        }
 
         //var targetRotation = Quaternion.Euler(gameObject.transform.localEulerAngles);
 
@@ -132,7 +137,7 @@ public class PalyerMove : MonoBehaviour
         //    moveDirection.y = jumpSpeed;
         //}
         //重力を発生させる
-        moveDirection.y -= gravity * Time.deltaTime;
+        //moveDirection.y -= gravity * Time.deltaTime;
 
         //回転
         if (Input.GetKeyDown(KeyCode.R))

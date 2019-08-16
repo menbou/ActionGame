@@ -6,9 +6,11 @@ ScriptsOnlyBuild:
     - UnityStandardAssets.CrossPlatformInput.Joystick
     - UnityStandardAssets.CrossPlatformInput.MobileControlRig
     Assembly-CSharp.dll:
-    - Attack
     - EnemyHit
-    - PalyerMove
+    - GameController
+    - LifePanel
+    - SapphiArtChan_AnimManager
+    - UnitychanController
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -94,11 +96,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10052}
     - Class: 114
-      Script: {instanceID: 10270}
+      Script: {instanceID: 10232}
     - Class: 114
-      Script: {instanceID: 10334}
+      Script: {instanceID: 10274}
     - Class: 114
-      Script: {instanceID: 10586}
+      Script: {instanceID: 10280}
+    - Class: 114
+      Script: {instanceID: 20090}
+    - Class: 114
+      Script: {instanceID: 38632}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -110,8 +116,6 @@ ScriptsOnlyBuild:
     - Class: 136
       Script: {instanceID: 0}
     - Class: 137
-      Script: {instanceID: 0}
-    - Class: 143
       Script: {instanceID: 0}
     - Class: 154
       Script: {instanceID: 0}
@@ -132,6 +136,25 @@ ScriptsOnlyBuild:
     - Class: 258
       Script: {instanceID: 0}
     - Class: 1953259897
+      Script: {instanceID: 0}
+    Assets/scene_v2.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 157
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -1001,6 +1024,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ArtchanAttack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: ForcedReset
@@ -1010,6 +1039,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: SmoothFollow
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SapphiArtChan_AnimManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1052,6 +1087,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.CrossPlatformInput
     className: MobileControlRig
+  - hash:
+      serializedVersion: 2
+      Hash: 2004fb66c4fc4fefac2b3220d6ae588d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UnitychanController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1330,6 +1371,12 @@ ScriptsOnlyBuild:
     className: Mudguard
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimationManagerUI
+  - hash:
+      serializedVersion: 2
       Hash: c0e061a135ad81adea53b31e6bf68107
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Vehicles.Aeroplane
@@ -1592,7 +1639,20 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: AutoMobileShaderSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: e5acc8570339028cea8e63828cc813a7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LifePanel
+  - hash:
+      serializedVersion: 2
+      Hash: aed18cc233acbbb647edff45b04da36d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameController
   platform: 13
   scenePathNames:
   - Assets/scene.unity
+  - Assets/scene_v2.unity
   playerPath: D:/data/working/Unity/DynastyWarriors/Android/UnityChan_0721.apk
