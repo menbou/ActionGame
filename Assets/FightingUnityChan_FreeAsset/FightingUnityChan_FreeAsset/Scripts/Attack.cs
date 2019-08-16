@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour
     //右足のコライダー
     private Collider footCollider;
 
-    GameObject parent, child;
+    GameObject parent;
 
     // Use this for initialization
     void Start()
@@ -23,7 +23,7 @@ public class Attack : MonoBehaviour
 
         //左手のコライダーを取得
         parent = GameObject.Find("Character1_LeftForeArm");
-        child = GameObject.Find("Character1_LeftHand");
+        //child = GameObject.Find("Character1_LeftHand");
         handCollider = parent.transform.Find("Character1_LeftHand").GetComponent<SphereCollider>();
 
         parent = GameObject.Find("Character1_RightFoot");
@@ -48,10 +48,10 @@ public class Attack : MonoBehaviour
 
 
         ////Aを押すとjab
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    animator.SetBool("Jab", true);
-        //}
+        ////if (Input.GetKeyDown(KeyCode.A))
+        ////{
+        ////    animator.SetBool("Jab", true);
+        ////}
 
         ////Sを押すとHikick
         //if (Input.GetKeyDown(KeyCode.S))
@@ -68,7 +68,11 @@ public class Attack : MonoBehaviour
         {
             animator.SetBool("ScrewKick", false);
         }
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).fullPathHash);
+        if (animator.GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash("Run.Headspring"))
+        {
+            animator.SetBool("DamageDown", false);
+        }
+        //Debug.Log(animator.GetCurrentAnimatorStateInfo(0).fullPathHash + " " + Animator.StringToHash("Run.DamageDown") + " " + Animator.StringToHash("Run.Idle"));
     }
 
     public void OnClick_Maru()
@@ -91,5 +95,15 @@ public class Attack : MonoBehaviour
         animator.SetBool("ScrewKick", true); 
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        //攻撃した相手がEnemyの場合
+        if (other.CompareTag("Enemy"))
+        {
+            animator.SetBool("DamageDown", true);
+            
+
+        }
+    }
 
 }
